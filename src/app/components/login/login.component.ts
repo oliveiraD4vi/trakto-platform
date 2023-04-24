@@ -14,6 +14,7 @@ import {
 export class LoginComponent {
   email: string | undefined;
   password: string | undefined;
+  loading = false;
 
   loginForm = new FormGroup({
     email: new FormControl("", [Validators.required, Validators.email]),
@@ -32,5 +33,16 @@ export class LoginComponent {
   convertToFormControl(absCtrl: AbstractControl | null): FormControl {
     const ctrl = absCtrl as FormControl;
     return ctrl;
+  }
+
+  onSubmit() {
+    this.loading = true;
+
+    try {
+      console.log(this.email, this.password);
+      this.loading = false;
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
