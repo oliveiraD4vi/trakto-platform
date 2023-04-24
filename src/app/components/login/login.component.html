@@ -1,7 +1,7 @@
 <div class="login-container">
   <img src="../../../assets/images/trakto.svg" alt="Logo" class="logo" />
   <h2 class="title">Olá, faça login em sua conta.</h2>
-  <form>
+  <form [formGroup]="loginForm">
     <div class="form-group">
       <label for="email">E-mail:</label>
       <input
@@ -11,7 +11,18 @@
         class="form-control"
         placeholder="Seu email"
         required
-        autofocus />
+        autofocus
+        [(ngModel)]="email"
+        [formControl]="convertToFormControl(loginForm.get('email'))"
+        (ngModelChange)="validateEmail()" />
+      <div
+        *ngIf="
+          loginForm.get('email')?.invalid &&
+          (loginForm.get('email')?.dirty || loginForm.get('email.touched'))
+        "
+        class="error-message">
+        E-mail inválido.
+      </div>
     </div>
     <div class="form-group">
       <label for="password">Senha:</label>
@@ -21,8 +32,25 @@
         name="password"
         class="form-control"
         placeholder="Sua senha"
-        required />
+        required
+        [(ngModel)]="password"
+        [formControl]="convertToFormControl(loginForm.get('password'))"
+        minlength="8" />
+      <div
+        *ngIf="
+          loginForm.get('password')?.invalid &&
+          (loginForm.get('password')?.dirty ||
+            loginForm.get('password')?.touched)
+        "
+        class="error-message">
+        Senha inválida.
+      </div>
     </div>
-    <button type="submit" class="btn btn-primary">Entrar</button>
+    <button
+      type="submit"
+      [disabled]="loginForm.invalid || !loginForm.touched"
+      class="btn btn-primary">
+      Entrar
+    </button>
   </form>
 </div>
