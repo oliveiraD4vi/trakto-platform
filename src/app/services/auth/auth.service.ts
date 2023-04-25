@@ -1,4 +1,4 @@
-import { CookiesService } from "./cookies.service";
+import { CookiesService } from "../cookies/cookies.service";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
