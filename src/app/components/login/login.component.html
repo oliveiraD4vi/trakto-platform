@@ -17,9 +17,7 @@
         placeholder="Digite seu email"
         required
         autofocus
-        [(ngModel)]="email"
-        [formControl]="convertToFormControl(loginForm.get('email'))"
-        (ngModelChange)="validateEmail()" />
+        formControlName="email" />
       <div
         *ngIf="
           loginForm.get('email')?.invalid &&
@@ -39,8 +37,7 @@
         class="form-control"
         placeholder="Digite sua senha"
         required
-        [(ngModel)]="password"
-        [formControl]="convertToFormControl(loginForm.get('password'))"
+        formControlName="password"
         minlength="8" />
       <div
         *ngIf="

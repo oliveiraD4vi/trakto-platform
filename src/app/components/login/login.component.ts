@@ -1,12 +1,7 @@
 import { Component } from "@angular/core";
-import {
-  AbstractControl,
-  FormControl,
-  FormGroup,
-  Validators,
-} from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
-import { of } from "rxjs";
+import { EMPTY } from "rxjs";
 import { tap, catchError } from "rxjs/operators";
 import { AuthService } from "src/app/services/auth.service";
 import { CookiesService } from "src/app/services/cookies.service";
@@ -17,17 +12,12 @@ import { CookiesService } from "src/app/services/cookies.service";
   styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent {
-  email: string | undefined;
-  password: string | undefined;
   loading = false;
   loginFailed = false;
 
   loginForm = new FormGroup({
-    email: new FormControl({ value: "", disabled: this.loading }, [
-      Validators.required,
-      Validators.email,
-    ]),
-    password: new FormControl({ value: "", disabled: this.loading }, [
+    email: new FormControl("", [Validators.required, Validators.email]),
+    password: new FormControl("", [
       Validators.required,
       Validators.minLength(8),
     ]),
@@ -40,10 +30,13 @@ export class LoginComponent {
   ) {}
 
   onSubmit() {
-    this.loading = true;
+    this.disableFields();
 
     this.authService
-      .login(this.email, this.password)
+      .login(
+        this.loginForm?.get("email")!.value,
+        this.loginForm?.get("password")!.value
+      )
       .pipe(
         tap(response => {
           this.cookiesService.setTokens(
@@ -54,26 +47,25 @@ export class LoginComponent {
         }),
         catchError(() => {
           this.clearFields();
-          this.loading = false;
+          this.enableFields();
           this.loginFailed = true;
-          return of(null);
+          return EMPTY;
         })
       )
       .subscribe();
   }
 
   clearFields() {
-    this.email = "";
-    this.password = "";
+    this.loginForm.reset();
   }
 
-  validateEmail() {
-    if (this.loginForm.get("email")?.invalid) {
-      this.loginForm.get("email")?.markAsTouched();
-    }
+  disableFields() {
+    this.loading = true;
+    this.loginForm.disable();
   }
 
-  convertToFormControl(absCtrl: AbstractControl | null): FormControl {
-    return absCtrl as FormControl;
+  enableFields() {
+    this.loading = false;
+    this.loginForm.enable();
   }
 }

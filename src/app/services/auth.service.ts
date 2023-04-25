@@ -16,10 +16,7 @@ export class AuthService {
     private router: Router
   ) {}
 
-  login(
-    email: string | undefined,
-    password: string | undefined
-  ): Observable<any> {
+  login(email: string | null, password: string | null): Observable<any> {
     const headers = new HttpHeaders({ "Content-Type": "application/json" });
     return this.http.post(
       `${this.apiUrl}/auth/signin`,
