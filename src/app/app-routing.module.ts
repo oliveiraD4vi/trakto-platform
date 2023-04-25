@@ -1,12 +1,15 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { LoginComponent } from "./components/login/login.component";
-import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { AuthGuard } from "./guards/auth/auth.guard";
 import { LoginGuard } from "./guards/login/login.guard";
 
 const routes: Routes = [
-  { path: "", redirectTo: "/login", pathMatch: "full" },
+  {
+    path: "",
+    redirectTo: "/login",
+    pathMatch: "full",
+  },
   {
     path: "login",
     pathMatch: "full",
@@ -15,11 +18,14 @@ const routes: Routes = [
   },
   {
     path: "dashboard",
-    pathMatch: "full",
-    component: DashboardComponent,
+    loadChildren: () =>
+      import("./dashboard/dashboard.module").then(m => m.DashboardModule),
     canActivate: [AuthGuard],
   },
-  { path: "**", redirectTo: "/login" },
+  {
+    path: "**",
+    redirectTo: "/login",
+  },
 ];
 
 @NgModule({
