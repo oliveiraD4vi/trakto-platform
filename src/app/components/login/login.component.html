@@ -1,7 +1,12 @@
 <div class="login-container">
   <img src="../../../assets/images/trakto.svg" alt="Logo" class="logo" />
   <h2 class="title">Olá, faça login em sua conta.</h2>
+
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div *ngIf="loginFailed" class="login-error error-message">
+      E-mail ou senha incorretos!
+    </div>
+
     <div class="form-group">
       <label for="email">E-mail:</label>
       <input
@@ -24,6 +29,7 @@
         E-mail inválido
       </div>
     </div>
+
     <div class="form-group">
       <label for="password">Senha:</label>
       <input
@@ -46,6 +52,7 @@
         Senha inválida
       </div>
     </div>
+
     <button
       type="submit"
       [disabled]="loginForm.invalid || !loginForm.touched || loading"

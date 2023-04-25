@@ -20,6 +20,7 @@ export class LoginComponent {
   email: string | undefined;
   password: string | undefined;
   loading = false;
+  loginFailed = false;
 
   loginForm = new FormGroup({
     email: new FormControl({ value: "", disabled: this.loading }, [
@@ -50,14 +51,20 @@ export class LoginComponent {
             response.refresh_token
           );
           this.router.navigate(["/dashboard"]);
-          this.loading = false;
         }),
         catchError(() => {
+          this.clearFields();
           this.loading = false;
+          this.loginFailed = true;
           return of(null);
         })
       )
       .subscribe();
+  }
+
+  clearFields() {
+    this.email = "";
+    this.password = "";
   }
 
   validateEmail() {
