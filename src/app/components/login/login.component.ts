@@ -5,6 +5,8 @@ import {
   FormGroup,
   Validators,
 } from "@angular/forms";
+import { Router } from "@angular/router";
+import { AuthService } from "src/app/services/auth.service";
 
 @Component({
   selector: "app-login",
@@ -17,12 +19,29 @@ export class LoginComponent {
   loading = false;
 
   loginForm = new FormGroup({
-    email: new FormControl("", [Validators.required, Validators.email]),
-    password: new FormControl("", [
+    email: new FormControl({ value: "", disabled: this.loading }, [
+      Validators.required,
+      Validators.email,
+    ]),
+    password: new FormControl({ value: "", disabled: this.loading }, [
       Validators.required,
       Validators.minLength(8),
     ]),
   });
+
+  constructor(private authService: AuthService, private router: Router) {}
+
+  onSubmit() {
+    this.loading = true;
+
+    try {
+      this.authService.login();
+      this.router.navigate(["/dashboard"]);
+      this.loading = false;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   validateEmail() {
     if (this.loginForm.get("email")?.invalid) {
@@ -33,16 +52,5 @@ export class LoginComponent {
   convertToFormControl(absCtrl: AbstractControl | null): FormControl {
     const ctrl = absCtrl as FormControl;
     return ctrl;
-  }
-
-  onSubmit() {
-    this.loading = true;
-
-    try {
-      console.log(this.email, this.password);
-      this.loading = false;
-    } catch (error) {
-      console.log(error);
-    }
   }
 }
