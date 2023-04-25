@@ -19,6 +19,7 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthGuard],
   },
+  { path: "**", redirectTo: "/login" },
 ];
 
 @NgModule({
