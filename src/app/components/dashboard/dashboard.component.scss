@@ -1,7 +1,13 @@
+@import "../../../assets/scss/colors.scss";
+
 main {
   width: 100vw;
   min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url('../../../assets/images/items-background.svg');
+  background-color: $background-color;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
