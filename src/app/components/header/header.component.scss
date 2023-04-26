@@ -10,6 +10,7 @@
 
 .header-logo img {
   height: 50px;
+  cursor: pointer;
 }
 
 .header-info {
@@ -28,8 +29,8 @@
   }
 
   .header-notification {
-    padding: 0 25px;
-    margin: 0 25px;
+    padding: 0 35px;
+    margin: 0 35px;
     border-right: 1px solid $primary-color;
     border-left: 1px solid $primary-color;
     cursor: pointer;
