@@ -1,0 +1,114 @@
+@import "../../../assets/scss/colors.scss";
+
+main {
+  width: 100vw;
+  min-height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 65px;
+  background-image: url('../../../assets/images/items-background.svg');
+  background-color: $background-color;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .modules-items {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+
+    .modules-item a {
+      display: grid;
+      place-items: center;
+      text-align: center;
+      cursor: pointer;
+
+      h2 {
+        font-size: 42px;
+        font-weight: bold;
+      }
+
+      span {
+        display: flex;
+        width: 28px;
+        border-bottom: 5px solid;
+        margin-bottom: 30px;
+      }
+
+      .wrapper-outside {
+        width: 330px;
+        height: 330px;
+        background-color: $white-800;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.05);
+
+        .wrapper-inside {
+          width: 280px;
+          height: 280px;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          background-image: url('../../../assets/images/items-background-light.svg');
+          background-repeat: no-repeat;
+          background-size: cover;
+
+          img {
+            width: 80%;
+          }
+        }
+      }
+
+      &.blue {
+        span {
+          border-color: $modules-blue;
+        }
+
+        .wrapper-outside {
+          .wrapper-inside {
+            background-color: $modules-blue;
+          }
+        }
+      }
+
+      &.green {
+        span {
+          border-color: $modules-green;
+        }
+
+        .wrapper-outside {
+          .wrapper-inside {
+            background-color: $modules-green;
+          }
+        }
+      }
+
+      &.pink {
+        span {
+          border-color: $modules-pink;
+        }
+
+        .wrapper-outside {
+          .wrapper-inside {
+            background-color: $modules-pink;
+          }
+        }
+      }
+
+      &.red {
+        span {
+          border-color: $modules-red;
+        }
+
+        .wrapper-outside {
+          .wrapper-inside {
+            background-color: $modules-red;
+          }
+        }
+      }
+    }
+  }
+}

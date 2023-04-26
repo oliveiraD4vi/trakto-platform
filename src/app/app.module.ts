@@ -4,13 +4,14 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./components/login/login.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { HttpClientModule } from "@angular/common/http";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, DashboardComponent],
+  declarations: [AppComponent, LoginComponent],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
