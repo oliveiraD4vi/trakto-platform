@@ -1,4 +1,60 @@
 <app-header></app-header>
 <main>
-  <p>dashboard works!</p>
+  <ul class="modules-items">
+    <li class="modules-item">
+      <a class="blue" (click)="goToRoute('courseware')">
+        <h2>Material Didático</h2>
+        <span></span>
+        <div class="wrapper-outside">
+          <div class="wrapper-inside">
+            <img
+              src="../../../assets/images/modules/study-book.png"
+              alt="study book" />
+          </div>
+        </div>
+      </a>
+    </li>
+
+    <li class="modules-item">
+      <a class="green" (click)="goToRoute('quiz')">
+        <h2>Quiz</h2>
+        <span></span>
+        <div class="wrapper-outside">
+          <div class="wrapper-inside">
+            <img
+              src="../../../assets/images/modules/medal.png"
+              alt="study book" />
+          </div>
+        </div>
+      </a>
+    </li>
+
+    <li class="modules-item">
+      <a class="pink" (click)="goToRoute('blackboard')">
+        <h2>Desenho</h2>
+        <span></span>
+        <div class="wrapper-outside">
+          <div class="wrapper-inside">
+            <img
+              src="../../../assets/images/modules/paint.png"
+              alt="study book" />
+          </div>
+        </div>
+      </a>
+    </li>
+
+    <li class="modules-item">
+      <a class="red" (click)="goToRoute('videos')">
+        <h2>Youtube</h2>
+        <span></span>
+        <div class="wrapper-outside">
+          <div class="wrapper-inside">
+            <img
+              src="../../../assets/images/modules/youtube.png"
+              alt="study book" />
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
 </main>
