@@ -3,8 +3,8 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { EMPTY } from "rxjs";
 import { tap, catchError } from "rxjs/operators";
-import { AuthService } from "src/app/services/auth.service";
-import { CookiesService } from "src/app/services/cookies.service";
+import { AuthService } from "../../services/auth/auth.service";
+import { CookiesService } from "../../services/cookies/cookies.service";
 
 @Component({
   selector: "app-login",

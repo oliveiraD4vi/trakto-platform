@@ -1,5 +1,5 @@
-import { AuthService } from "src/app/services/auth.service";
 import { Component } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-dashboard",
@@ -7,9 +7,9 @@ import { Component } from "@angular/core";
   styleUrls: ["./dashboard.component.scss"],
 })
 export class DashboardComponent {
-  constructor(private authService: AuthService) {}
+  constructor(private router: Router) {}
 
-  click() {
-    this.authService.logout();
+  goToRoute(route: string) {
+    this.router.navigate([route]);
   }
 }
