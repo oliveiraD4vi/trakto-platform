@@ -1,4 +1,3 @@
-import { AuthService } from "../../services/auth/auth.service";
 import { Component } from "@angular/core";
 
 @Component({
@@ -6,10 +5,4 @@ import { Component } from "@angular/core";
   templateUrl: "./dashboard.component.html",
   styleUrls: ["./dashboard.component.scss"],
 })
-export class DashboardComponent {
-  constructor(private authService: AuthService) {}
-
-  click() {
-    this.authService.logout();
-  }
-}
+export class DashboardComponent {}

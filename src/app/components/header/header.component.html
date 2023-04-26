@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="header-logo">
+    <img src="../../../assets/images/trakto-edu-dark.svg" alt="Logo" />
+  </div>
+  <div class="header-info">
+    <div class="header-date">
+      <img
+        src="../../../assets/images/calendar.svg"
+        alt="calendar"
+        class="header-user-image" />
+      {{ currentDate | date : "dd/MM/yyyy" }}
+    </div>
+    <div class="header-notification">
+      <img src="../../../assets/images/notification.svg" alt="notification" />
+    </div>
+    <div class="header-user" (click)="toggleDropdown()">
+      <img
+        src="../../../assets/images/user.svg"
+        alt="user"
+        class="header-user-image" />
+      <img
+        src="../../../assets/images/arrow-down.svg"
+        alt="arrow down"
+        class="arrow-down" />
+      <app-dropdown *ngIf="isDropdownVisible"></app-dropdown>
+    </div>
+  </div>
+</header>

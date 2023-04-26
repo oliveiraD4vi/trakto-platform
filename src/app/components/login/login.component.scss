@@ -1,5 +1,12 @@
 @import "../../../assets/scss/colors.scss";
 
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .login-container {
   width: 300px;
   margin: 0 auto;
