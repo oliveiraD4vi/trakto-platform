@@ -5,6 +5,7 @@ import { DashboardComponent } from "./dashboard.component";
 import { HeaderComponent } from "../components/header/header.component";
 import { DropdownComponent } from "../components/dropdown/dropdown.component";
 import { CoursewareComponent } from "./courseware/courseware.component";
+import { CardRenderingComponent } from "./card-rendering/card-rendering.component";
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { CoursewareComponent } from "./courseware/courseware.component";
     HeaderComponent,
     DropdownComponent,
     CoursewareComponent,
+    CardRenderingComponent,
   ],
   imports: [CommonModule, DashboardRoutingModule],
 })

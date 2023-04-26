@@ -3,13 +3,12 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Observable } from "rxjs";
+import { URL } from "src/app/utils/constants/constants";
 
 @Injectable({
   providedIn: "root",
 })
 export class AuthService {
-  private apiUrl = "https://api.trakto.io";
-
   constructor(
     private cookiesService: CookiesService,
     private http: HttpClient,
@@ -19,7 +18,7 @@ export class AuthService {
   login(email: string | null, password: string | null): Observable<any> {
     const headers = new HttpHeaders({ "Content-Type": "application/json" });
     return this.http.post(
-      `${this.apiUrl}/auth/signin`,
+      `${URL.API_URL}/auth/signin`,
       { email, password },
       { headers }
     );

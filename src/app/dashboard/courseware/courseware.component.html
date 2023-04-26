@@ -1,2 +1,34 @@
 <app-header></app-header>
-<main>Courseware works!</main>
+<main>
+  <div class="container">
+    <img
+      class="banner"
+      src="../../../assets/images/banners/module-main-banner.png"
+      alt="banner courseware" />
+
+    <div class="card-container">
+      <div class="card-top">
+        <div class="head-title">
+          <div class="filter">
+            <p>Semana 06/02 até 28/02</p>
+            <button class="previous">
+              <img
+                src="../../../assets/images/arrow-left.svg"
+                alt="arrow left" />
+            </button>
+            <button class="next">
+              <img
+                src="../../../assets/images/arrow-right.svg"
+                alt="arrow right" />
+            </button>
+          </div>
+        </div>
+        <div class="button">
+          <button class="link-button">Ver todo conteúdo</button>
+        </div>
+      </div>
+
+      <app-card-rendering [filter]="filterOptions"></app-card-rendering>
+    </div>
+  </div>
+</main>
