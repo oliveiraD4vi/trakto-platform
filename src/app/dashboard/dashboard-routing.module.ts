@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { DashboardComponent } from "./dashboard.component";
 import { CoursewareComponent } from "./courseware/courseware.component";
+import { AllDesignsComponent } from "./all-designs/all-designs.component";
 
 const routes: Routes = [
   {
@@ -13,6 +14,11 @@ const routes: Routes = [
     path: "courseware",
     pathMatch: "full",
     component: CoursewareComponent,
+  },
+  {
+    path: "designs",
+    pathMatch: "full",
+    component: AllDesignsComponent,
   },
 ];
 
