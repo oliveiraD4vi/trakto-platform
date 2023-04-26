@@ -1,12 +1,18 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { DashboardComponent } from "../components/dashboard/dashboard.component";
+import { DashboardComponent } from "./dashboard.component";
+import { CoursewareComponent } from "./courseware/courseware.component";
 
 const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
     component: DashboardComponent,
+  },
+  {
+    path: "courseware",
+    pathMatch: "full",
+    component: CoursewareComponent,
   },
 ];
 
