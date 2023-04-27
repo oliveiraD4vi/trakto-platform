@@ -101,6 +101,7 @@ export interface User {
       url: null;
     };
   };
+  logo: any;
   access_token: string;
   firebase_token: string;
   refresh_token: string;

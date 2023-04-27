@@ -7,57 +7,70 @@
   padding: 0 65px;
   height: 8vh;
   background-color: $white-900;
-}
 
-.header-logo {
-  height: 100%;
-  display: grid;
-  place-items: center;
+  &.dark {
+    background-color: $background-color-dark;
 
-  img {
-    height: 80% !important;
-    cursor: pointer;
-  }
-}
+    .header-info {
+      .header-date {
+        color: $white-900;
+      }
 
-.header-info {
-  display: flex;
-  align-items: center;
-
-  .header-date {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-
-    img {
-      width: 24px;
-      margin-right: 10px;
+      .header-notification {
+        border-color: $white-900;
+      }
     }
   }
 
-  .header-notification {
-    padding: 0 35px;
-    margin: 0 35px;
-    border-right: 1px solid $primary-color;
-    border-left: 1px solid $primary-color;
-    cursor: pointer;
+  .header-logo {
+    height: 100%;
+    display: grid;
+    place-items: center;
 
     img {
-      width: 24px;
+      height: 80% !important;
+      cursor: pointer;
     }
   }
 
-  .header-user {
-    position: relative;
+  .header-info {
     display: flex;
     align-items: center;
-    cursor: pointer;
 
-    .header-user-image {
-      width: 40px;
-      border-radius: 50%;
-      margin-right: 10px;
-      background-color: $white-700;
+    .header-date {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+
+      img {
+        width: 24px;
+        margin-right: 10px;
+      }
+    }
+
+    .header-notification {
+      padding: 0 35px;
+      margin: 0 35px;
+      border-right: 1px solid $primary-color;
+      border-left: 1px solid $primary-color;
+      cursor: pointer;
+
+      img {
+        width: 24px;
+      }
+    }
+
+    .header-user {
+      position: relative;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .header-user-image {
+        width: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
     }
   }
 }
