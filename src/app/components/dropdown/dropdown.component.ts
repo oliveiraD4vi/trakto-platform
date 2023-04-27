@@ -1,5 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { Router } from "@angular/router";
 import { AuthService } from "src/app/services/auth/auth.service";
+import { User } from "src/app/utils/interfaces/user";
 
 @Component({
   selector: "app-dropdown",
@@ -7,9 +9,12 @@ import { AuthService } from "src/app/services/auth/auth.service";
   styleUrls: ["./dropdown.component.scss"],
 })
 export class DropdownComponent {
-  constructor(private authService: AuthService) {}
+  @Input() user: User | null = null;
+
+  constructor(private router: Router, private authService: AuthService) {}
 
   click() {
     this.authService.logout();
+    this.router.navigate(["/login"]);
   }
 }

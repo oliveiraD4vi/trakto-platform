@@ -1,6 +1,7 @@
 <div class="dropdown">
   <div class="dropdown-header">
-    <h1>Sua conta</h1>
+    <h1>{{ user ? user.firstname : "Sua conta" }}</h1>
+    <span>{{ user ? user.email : "" }}</span>
   </div>
   <div class="dropdown-menu">
     <span (click)="click()">Sair da conta</span>

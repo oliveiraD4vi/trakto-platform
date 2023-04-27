@@ -1,7 +1,6 @@
 import { CookiesService } from "../cookies/cookies.service";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 import { URL } from "src/app/utils/constants/constants";
 import { User } from "src/app/utils/interfaces/user";
@@ -12,8 +11,7 @@ import { User } from "src/app/utils/interfaces/user";
 export class AuthService {
   constructor(
     private cookiesService: CookiesService,
-    private http: HttpClient,
-    private router: Router
+    private http: HttpClient
   ) {}
 
   login(email: string | null, password: string | null): Observable<User> {
@@ -28,6 +26,5 @@ export class AuthService {
 
   logout(): void {
     this.cookiesService.clearTokens();
-    this.router.navigate(["/login"]);
   }
 }

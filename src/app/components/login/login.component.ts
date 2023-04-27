@@ -1,3 +1,4 @@
+import { LocalStorageService } from "./../../services/localStorage/localStorage.service";
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -26,6 +27,7 @@ export class LoginComponent {
   constructor(
     private cookiesService: CookiesService,
     private authService: AuthService,
+    private localStorageService: LocalStorageService,
     private router: Router
   ) {}
 
@@ -38,11 +40,9 @@ export class LoginComponent {
         this.loginForm?.get("password")!.value
       )
       .pipe(
-        tap(response => {
-          this.cookiesService.setTokens(
-            response.access_token,
-            response.refresh_token
-          );
+        tap(data => {
+          this.cookiesService.setTokens(data.access_token, data.refresh_token);
+          this.localStorageService.setUserData(data);
           this.router.navigate(["/dashboard"]);
         }),
         catchError(() => {
