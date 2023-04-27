@@ -1,3 +1,4 @@
+import { LocalStorageService } from "./../localStorage/localStorage.service";
 import { CookiesService } from "../cookies/cookies.service";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
@@ -11,6 +12,7 @@ import { User } from "src/app/utils/interfaces/user";
 export class AuthService {
   constructor(
     private cookiesService: CookiesService,
+    private localStorageService: LocalStorageService,
     private http: HttpClient
   ) {}
 
@@ -26,5 +28,6 @@ export class AuthService {
 
   logout(): void {
     this.cookiesService.clearTokens();
+    this.localStorageService.clearUserData();
   }
 }

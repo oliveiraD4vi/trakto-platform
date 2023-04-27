@@ -20,4 +20,8 @@ export class LocalStorageService {
     localStorage.setItem(USER_DATA_KEY, JSON.stringify(userData));
     this.userDataSubject.next(userData);
   }
+
+  clearUserData() {
+    localStorage.removeItem(USER_DATA_KEY);
+  }
 }
