@@ -8,7 +8,7 @@ import { FilterOptions } from "src/app/utils/interfaces/filter";
 })
 export class AllDesignsComponent {
   filterOptions: FilterOptions = {
-    total_per_page: 10,
+    total_per_page: 9999,
     order_orientation: "desc",
   };
 }

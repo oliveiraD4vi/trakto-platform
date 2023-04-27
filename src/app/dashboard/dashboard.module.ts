@@ -7,6 +7,7 @@ import { DropdownComponent } from "../components/dropdown/dropdown.component";
 import { CoursewareComponent } from "./courseware/courseware.component";
 import { CardRenderingComponent } from "./card-rendering/card-rendering.component";
 import { AllDesignsComponent } from "./all-designs/all-designs.component";
+import { LazyLoadImageModule } from "ng-lazyload-image";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,6 @@ import { AllDesignsComponent } from "./all-designs/all-designs.component";
     CardRenderingComponent,
     AllDesignsComponent,
   ],
-  imports: [CommonModule, DashboardRoutingModule],
+  imports: [CommonModule, DashboardRoutingModule, LazyLoadImageModule],
 })
 export class DashboardModule {}

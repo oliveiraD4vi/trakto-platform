@@ -31,6 +31,7 @@ export interface Design {
   is_renamed: boolean;
   is_template: boolean;
   products: Product[];
+  pages: object[];
   tags: string[];
   theme_reference: Reference;
   thumbs: Thumb;
