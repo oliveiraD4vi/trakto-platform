@@ -24,12 +24,30 @@
 
   .header-logo {
     height: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
 
     img {
       height: 80% !important;
       cursor: pointer;
+    }
+
+    .environment-change {
+      display: flex;
+      align-items: center;
+      padding: 16px 24px;
+      font-size: 20px;
+      font-weight: 400;
+      color: $primary-color;
+      border-radius: 8px;
+      border: 1px solid $primary-color;
+      background-color: transparent;
+      margin-left: 3rem;
+
+      img {
+        height: 20px;
+        margin-right: 10px;
+      }
     }
   }
 
