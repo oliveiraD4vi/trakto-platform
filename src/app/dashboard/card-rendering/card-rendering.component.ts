@@ -20,8 +20,7 @@ export class CardRenderingComponent implements OnInit, OnChanges {
   @Input() listAll = false;
 
   items: Design[] = [];
-  hasNextPage = false;
-  hasPreviousPage = false;
+  loading = false;
 
   isMouseDown = false;
   startX = 0;
@@ -49,15 +48,18 @@ export class CardRenderingComponent implements OnInit, OnChanges {
   }
 
   getData() {
+    this.items = [];
+    this.loading = true;
+
     this.coursewareService
       .listAllDesigns(this.filter)
       .pipe(
-        tap(({ data, hasNextPage, hasPreviousPage }) => {
+        tap(({ data }) => {
           this.items = data;
-          (this.hasNextPage = hasNextPage),
-            (this.hasPreviousPage = hasPreviousPage);
+          this.loading = false;
         }),
         catchError(() => {
+          this.loading = false;
           return EMPTY;
         })
       )

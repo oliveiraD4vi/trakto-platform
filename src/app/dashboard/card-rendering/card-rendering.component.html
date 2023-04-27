@@ -2,7 +2,12 @@
   <h2 class="card-title">Material Didático</h2>
   <span>Acesse suas últimas apresentações de aula.</span>
 
+  <div *ngIf="loading" class="loading">
+    <div class="spinner dark"></div>
+  </div>
+
   <ul
+    *ngIf="!loading"
     [ngbTooltip]="!listAll ? 'Drag to see more items' : ''"
     [id]="!listAll ? 'my-scroll-component' : ''"
     [class]="listAll ? 'design-items-grid' : 'design-items-flex'">

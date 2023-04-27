@@ -81,9 +81,17 @@ a {
   width: 16px;
   height: 16px;
   vertical-align: text-bottom;
-  border: 0.1em solid rgba($white-900, 0.2);
-  border-right-color: $white-900;
   border-radius: 50%;
   margin-right: 10px;
   animation: spinner 0.75s linear infinite;
+
+  &.dark {
+    border: 0.1em solid rgba($black-900, 0.2);
+    border-right-color: $black-900;
+  }
+
+  &.light {
+    border: 0.1em solid rgba($white-900, 0.2);
+    border-right-color: $white-900;
+  }
 }
