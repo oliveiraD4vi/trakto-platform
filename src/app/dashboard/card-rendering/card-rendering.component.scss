@@ -1,0 +1,75 @@
+@import "../../../assets/scss/colors.scss";
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    padding-left: 10px;
+  }
+
+  span {
+    font-size: 16px;
+    font-weight: 400;
+    color: $black-100;
+    padding-left: 10px;
+  }
+
+  .design-items-flex {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    .design-item {
+      width: auto;
+      flex-basis: 20%;
+      flex-shrink: 0;
+    }
+
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+  }
+
+  .design-items-grid {
+    margin-top: 15px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+  }
+
+  .design-item {
+    width: 100%;
+    padding: 10px;
+
+    .thumb-container {
+      width: 100%;
+
+      img {
+        width: 100%;
+        border-radius: 4px;
+      }
+
+      .slides-counter {
+        position: relative;
+        bottom: 40px;
+        left: 15px;
+        color: $white-900;
+        background-color: $black-300;
+        z-index: 99;
+        font-size: 14px;
+        padding: 6px 12px;
+        border-radius: 20px;
+      }
+    }
+
+    p {
+      font-weight: 700;
+    }
+  }
+}

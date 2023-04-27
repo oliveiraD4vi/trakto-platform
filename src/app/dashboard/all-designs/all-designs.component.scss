@@ -1,0 +1,14 @@
+@import "../../../assets/scss/colors.scss";
+
+main {
+  width: 100vw;
+  min-height: 92vh;
+  display: flex;
+  padding: 40px 65px;
+
+  .card {
+    width: 100%;
+    padding: 60px 80px;
+    background-color: $white-900;
+  }
+}

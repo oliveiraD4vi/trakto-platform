@@ -1,0 +1,30 @@
+<div class="card-container">
+  <h2 class="card-title">Material Didático</h2>
+  <span>Acesse suas últimas apresentações de aula.</span>
+
+  <ul
+    [ngbTooltip]="!listAll ? 'Drag to see more items' : ''"
+    [id]="!listAll ? 'my-scroll-component' : ''"
+    [class]="listAll ? 'design-items-grid' : 'design-items-flex'">
+    <li class="design-item" *ngFor="let item of items; let i = index">
+      <a
+        [href]="'https://editor.trakto.io/presentation/p/' + item.id"
+        rel="noreferrer"
+        target="_blank">
+        <div class="thumb-container">
+          <img
+            [lazyLoad]="
+              item.thumbs.high || item.thumbs.medium || item.thumbs.low
+            "
+            [defaultImage]="'../../../assets/images/image-default.png'"
+            [alt]="item.title" />
+
+          <span class="slides-counter">
+            {{ item.pages ? item.pages.length : 1 }} Slides
+          </span>
+        </div>
+        <p class="item-title">Aula {{ i + 1 }}: {{ item.title }}</p>
+      </a>
+    </li>
+  </ul>
+</div>
