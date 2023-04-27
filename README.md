@@ -1,14 +1,14 @@
 # Trakto TV Angular App
 
-Este é um projeto em Angular 2+ que segue o protótipo fornecido pela Trakto Educação e permite ao usuário autenticar, acessar os módulos da Trakto TV e visualizar seus designs recentemente editados.
+This is an Angular 2+ project that follows the prototype provided by Trakto Education and allows the user to authenticate, access Trakto TV modules and view their newly edited designs.
 
 ## Deploy
 
-O link do deploy desse projeto é: [Trakto TV](https://trakto-platform.vercel.app/login)
+Deploy link: [Trakto TV](https://trakto-platform.vercel.app/login)
 
 ![Platform Screenshot](https://raw.githubusercontent.com/oliveiraD4vi/trakto-platform/main/src/assets/images/banners/screenshot-model.png)
 
-## Tecnologias Utilizadas
+## Technologies
 
 - Angular 15.2.0
 - TypeScript 4.9.4
@@ -17,9 +17,11 @@ O link do deploy desse projeto é: [Trakto TV](https://trakto-platform.vercel.ap
 - ESLint 8.33
 - prettier 2.8.7
 
-## Instruções para Rodar o Projeto
+## Instructions for Running the Project
 
-Após clonar o repositório, instale as dependências do projeto com o seguinte comando:
+You will need [Node 18+](https://nodejs.org/en), [Git](https://git-scm.com/) and [AngularCLI](https://angular.io/) installed on your machine to run this project.
+
+After cloning the repository, install the project's dependencies with the following command:
 
 ```
 # npm
@@ -29,7 +31,7 @@ npm install
 yarn
 ```
 
-Inicie o servidor local com o seguinte comando:
+With the dependencies properly installed, start the local server with the following command:
 
 ```
 # Angular CLI
@@ -39,10 +41,10 @@ ng serve
 npm start
 ```
 
-Abra o seu navegador e acesse http://localhost:4200/.
+Open your browser and go to http://localhost:4200/.
 
-Observação: Antes de executar o aplicativo, certifique-se de ter criado uma conta gratuita na Trakto e criado alguns documentos a partir de qualquer modelo disponível para que possa ver seu material na aplicação
+Note: Before running the app, make sure you have created a free Trakto account and created some documents from any available template so that you can view your material in the app.
 
-Agradecimentos
+### Thanks
 
-Obrigado por considerar este projeto! Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato.
+Thank you for considering this project! If you have any questions or suggestions, feel free to get in touch.
