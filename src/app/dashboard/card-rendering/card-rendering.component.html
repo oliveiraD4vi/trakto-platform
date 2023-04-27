@@ -2,7 +2,10 @@
   <h2 class="card-title">Material Didático</h2>
   <span>Acesse suas últimas apresentações de aula.</span>
 
-  <ul class="design-items">
+  <ul
+    [ngbTooltip]="!listAll ? 'Drag to see more items' : ''"
+    [id]="!listAll ? 'my-scroll-component' : ''"
+    [class]="listAll ? 'design-items-grid' : 'design-items-flex'">
     <li class="design-item" *ngFor="let item of items; let i = index">
       <a
         [href]="'https://editor.trakto.io/presentation/p/' + item.id"

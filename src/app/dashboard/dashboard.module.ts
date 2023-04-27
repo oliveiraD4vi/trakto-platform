@@ -8,6 +8,7 @@ import { CoursewareComponent } from "./courseware/courseware.component";
 import { CardRenderingComponent } from "./card-rendering/card-rendering.component";
 import { AllDesignsComponent } from "./all-designs/all-designs.component";
 import { LazyLoadImageModule } from "ng-lazyload-image";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,11 @@ import { LazyLoadImageModule } from "ng-lazyload-image";
     CardRenderingComponent,
     AllDesignsComponent,
   ],
-  imports: [CommonModule, DashboardRoutingModule, LazyLoadImageModule],
+  imports: [
+    CommonModule,
+    DashboardRoutingModule,
+    LazyLoadImageModule,
+    NgbModule,
+  ],
 })
 export class DashboardModule {}

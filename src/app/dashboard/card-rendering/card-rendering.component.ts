@@ -11,10 +11,15 @@ import { FilterOptions } from "src/app/utils/interfaces/filter";
 })
 export class CardRenderingComponent implements OnInit {
   @Input() filter: FilterOptions = {};
+  @Input() listAll = false;
 
   items: Design[] = [];
   hasNextPage = false;
   hasPreviousPage = false;
+
+  isMouseDown = false;
+  startX = 0;
+  scrollLeft = 0;
 
   constructor(private coursewareService: CoursewareService) {
     if (!Object.getOwnPropertyNames(this.filter).length) {
@@ -26,6 +31,13 @@ export class CardRenderingComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getData();
+    setTimeout(() => {
+      this.scrollEventListener();
+    }, 1);
+  }
+
+  getData() {
     this.coursewareService
       .listAllDesigns(this.filter)
       .pipe(
@@ -39,5 +51,32 @@ export class CardRenderingComponent implements OnInit {
         })
       )
       .subscribe();
+  }
+
+  scrollEventListener() {
+    const component = document.getElementById("my-scroll-component");
+
+    if (component) {
+      component.addEventListener("mousedown", (e: { pageX: number }) => {
+        this.isMouseDown = true;
+        this.startX = e.pageX - component.offsetLeft;
+        this.scrollLeft = component.scrollLeft;
+      });
+
+      component.addEventListener(
+        "mousemove",
+        (e: { preventDefault: () => void; pageX: number }) => {
+          if (!this.isMouseDown) return;
+          e.preventDefault();
+          const x = e.pageX - component.offsetLeft;
+          const walk = (x - this.startX) * 2;
+          component.scrollLeft = this.scrollLeft - walk;
+        }
+      );
+
+      component.addEventListener("mouseup", () => {
+        this.isMouseDown = false;
+      });
+    }
   }
 }
