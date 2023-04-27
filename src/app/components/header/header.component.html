@@ -1,12 +1,18 @@
 <header [class]="dark ? 'header dark' : 'header'">
-  <div [routerLink]="['/']" class="header-logo">
+  <div class="header-logo">
     <img
       [src]="
         dark
           ? '../../../assets/images/trakto-edu-light.svg'
           : '../../../assets/images/trakto-edu-dark.svg'
       "
-      alt="Logo" />
+      alt="Logo"
+      [routerLink]="['/']" />
+
+    <button *ngIf="showButton" [routerLink]="['/']" class="environment-change">
+      <img src="../../../assets/images/logout.svg" alt="change button" />
+      Trocar de ambiente
+    </button>
   </div>
   <div class="header-info">
     <div class="header-date">
