@@ -6,9 +6,12 @@
     <div class="spinner dark"></div>
   </div>
 
+  <div *ngIf="!loading && items.length === 0" class="error-message">
+    Material não encontrado!
+  </div>
+
   <ul
-    *ngIf="!loading"
-    [ngbTooltip]="!listAll ? 'Drag to see more items' : ''"
+    [ngbTooltip]="!listAll ? 'Arraste para ver mais itens' : ''"
     [id]="!listAll ? 'my-scroll-component' : ''"
     [class]="listAll ? 'design-items-grid' : 'design-items-flex'">
     <li class="design-item" *ngFor="let item of items; let i = index">

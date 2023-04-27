@@ -1,11 +1,5 @@
 @import "../../../assets/scss/colors.scss";
 
-::ng-deep .tooltip-inner {
-  padding: 8px 12px;
-  background-color: $white-700;
-  color: $primary-color;
-}
-
 main {
   width: 100vw;
   min-height: 92vh;
