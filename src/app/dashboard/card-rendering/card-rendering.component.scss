@@ -1,9 +1,30 @@
 @import "../../../assets/scss/colors.scss";
 
+::ng-deep .tooltip-inner {
+  padding: 8px 12px;
+  background-color: $modules-blue;
+  color: $primary-color;
+}
+
 .card-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  .error-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: $error-color;
+    padding: 15px 0;
+  }
+
+  .spinner {
+    margin-top: 30px;
+    width: 32px;
+    height: 32px;
+  }
 
   h2 {
     font-size: 24px;

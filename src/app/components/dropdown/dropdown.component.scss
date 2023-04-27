@@ -14,8 +14,9 @@
 
   .dropdown-header {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     margin-bottom: 15px;
+    gap: 10px;
 
     h1 {
       font-weight: 700;
