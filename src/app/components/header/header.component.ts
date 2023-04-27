@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
@@ -7,6 +7,9 @@ import { Router } from "@angular/router";
   styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent {
+  @Input() showButton = false;
+  @Input() dark = false;
+
   currentDate: Date = new Date();
   isDropdownVisible = false;
 

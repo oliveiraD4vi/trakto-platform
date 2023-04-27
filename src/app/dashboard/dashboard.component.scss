@@ -7,8 +7,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0 65px;
-  background-image: url('../../assets/images/items-background.svg');
-  background-color: $background-color;
+  background-image: url('../../assets/images/banners/modules-background.png');
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -29,6 +28,8 @@ main {
       h2 {
         font-size: 42px;
         font-weight: bold;
+        color: $white-900;
+        margin-bottom: 10px;
       }
 
       span {
@@ -47,7 +48,7 @@ main {
         .wrapper-outside {
           width: 330px;
           height: 330px;
-          background-color: $white-800;
+          background-color: $black-300;
           border-radius: 50%;
           display: grid;
           place-items: center;
