@@ -8,20 +8,18 @@
 
     <div class="card-container">
       <div class="card-top">
-        <div class="head-title">
-          <div class="filter">
-            <p>Semana 06/02 até 28/02</p>
-            <button class="previous">
-              <img
-                src="../../../assets/images/arrow-left.svg"
-                alt="arrow left" />
-            </button>
-            <button class="next">
-              <img
-                src="../../../assets/images/arrow-right.svg"
-                alt="arrow right" />
-            </button>
-          </div>
+        <div class="filter">
+          <p>
+            Semana: {{ formatDate(startDate) }} até {{ formatDate(endDate) }}
+          </p>
+          <button class="previous" (click)="previousWeeks()">
+            <img src="../../../assets/images/arrow-left.svg" alt="arrow left" />
+          </button>
+          <button class="next" (click)="nextWeeks()">
+            <img
+              src="../../../assets/images/arrow-right.svg"
+              alt="arrow right" />
+          </button>
         </div>
         <a [routerLink]="['/dashboard/designs']" class="button">
           <button class="link-button">Ver todo conteúdo</button>
