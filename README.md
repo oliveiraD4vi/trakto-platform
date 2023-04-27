@@ -6,6 +6,8 @@ Este é um projeto em Angular 2+ que segue o protótipo fornecido pela Trakto Ed
 
 O link do deploy desse projeto é: [Trakto TV](https://trakto-platform.vercel.app/login)
 
+![Platform Screenshot](https://raw.githubusercontent.com/oliveiraD4vi/trakto-platform/main/src/assets/images/banners/screenshot-model.png)
+
 ## Tecnologias Utilizadas
 
 - Angular 15.2.0
