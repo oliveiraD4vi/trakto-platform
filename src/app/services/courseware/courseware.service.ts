@@ -16,7 +16,7 @@ export class CoursewareService {
     private http: HttpClient
   ) {}
 
-  listAllDesigns(filterOptions: FilterOptions): Observable<any> {
+  listAllDesigns(filterOptions: FilterOptions): Observable<object> {
     const filter = this.filterService.buildFilter(filterOptions);
 
     const headers = new HttpHeaders({

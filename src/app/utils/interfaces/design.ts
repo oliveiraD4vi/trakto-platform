@@ -1,4 +1,4 @@
-interface AppReference {
+interface Reference {
   id: string;
 }
 
@@ -21,12 +21,8 @@ interface Thumb {
   low: string;
 }
 
-interface ThemeReference {
-  id: string;
-}
-
 export interface Design {
-  app_reference: AppReference;
+  app_reference: Reference;
   cover: Cover;
   created_at: string;
   id: string;
@@ -36,9 +32,9 @@ export interface Design {
   is_template: boolean;
   products: Product[];
   tags: string[];
-  theme_reference: ThemeReference;
+  theme_reference: Reference;
   thumbs: Thumb;
   title: string;
   updated_at: string;
-  user_reference: { id: string };
+  user_reference: Reference;
 }
