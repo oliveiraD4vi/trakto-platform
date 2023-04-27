@@ -5,6 +5,7 @@ import { Observable } from "rxjs";
 import { URL } from "src/app/utils/constants/constants";
 import { FilterOptions } from "src/app/utils/interfaces/filter";
 import { FilterService } from "../filter/filter.service";
+import { Response } from "src/app/utils/interfaces/response";
 
 @Injectable({
   providedIn: "root",
@@ -16,7 +17,7 @@ export class CoursewareService {
     private http: HttpClient
   ) {}
 
-  listAllDesigns(filterOptions: FilterOptions): Observable<object> {
+  listAllDesigns(filterOptions: FilterOptions): Observable<Response> {
     const filter = this.filterService.buildFilter(filterOptions);
 
     const headers = new HttpHeaders({
@@ -24,6 +25,8 @@ export class CoursewareService {
       Authorization: `Bearer ${this.cookiesService.getToken()}`,
     });
 
-    return this.http.get(`${URL.API_URL}/document?${filter}`, { headers });
+    return this.http.get<Response>(`${URL.API_URL}/document?${filter}`, {
+      headers,
+    });
   }
 }
