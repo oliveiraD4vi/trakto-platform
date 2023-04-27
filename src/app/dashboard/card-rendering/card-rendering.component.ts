@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from "@angular/core";
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from "@angular/core";
 import { EMPTY, catchError, tap } from "rxjs";
 import { CoursewareService } from "src/app/services/courseware/courseware.service";
 import { Design } from "src/app/utils/interfaces/design";
@@ -9,7 +15,7 @@ import { FilterOptions } from "src/app/utils/interfaces/filter";
   templateUrl: "./card-rendering.component.html",
   styleUrls: ["./card-rendering.component.scss"],
 })
-export class CardRenderingComponent implements OnInit {
+export class CardRenderingComponent implements OnInit, OnChanges {
   @Input() filter: FilterOptions = {};
   @Input() listAll = false;
 
@@ -30,8 +36,13 @@ export class CardRenderingComponent implements OnInit {
     }
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes["filter"]) {
+      this.getData();
+    }
+  }
+
   ngOnInit() {
-    this.getData();
     setTimeout(() => {
       this.scrollEventListener();
     }, 1);
