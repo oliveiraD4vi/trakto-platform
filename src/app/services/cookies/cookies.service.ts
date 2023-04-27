@@ -25,7 +25,6 @@ export class CookiesService {
   }
 
   clearTokens() {
-    this.cookieService.delete("access_token");
-    this.cookieService.delete("refresh_token");
+    this.cookieService.deleteAll();
   }
 }

@@ -13,7 +13,7 @@ export class DropdownComponent {
 
   constructor(private router: Router, private authService: AuthService) {}
 
-  click() {
+  logout() {
     this.authService.logout();
     this.router.navigate(["/login"]);
   }
